@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.flashes{
+    width: 100%;
+    display: block;
+    background: teal;
+    color: white;
+    padding: 10px;
+}
+.card {
+    background: #e5e7e6;
+    padding: 10px;
+    width: 50%;
+    height: 550px;
+    text-align: center;
+    right: 0;
+    left: 4rem;
+    margin: auto;
+    margin-top: 3rem;
+}
+
+#display{
+    background: #e0dfd5;
+    height: 150px;
+}
+#task_time{
+    left: 2rem;
+}
+.card .card-title {
+    font-weight: bold;
+    background: #b7b5b3;
+    display: block;
+    padding: 10px;
+    color: white;
+    box-sizing: border-box;
+    box-shadow: 0 1px 0 0 black;
+}
+#tasks{
+    width: 100%;
+    background: gainsboro;
+    font-family: comic-sans;
+    font-size: 15px;
+    height: 600px;
+}
