@@ -1,31 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display')
 * {
     padding: 0;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
+.container{
+  display: flex;
+  flex-flow: row;
+}
 .flashes{
     width: 100%;
     display: block;
-    background: teal;
-    color: white;
     padding: 10px;
 }
 .card {
+    display: flex;
+    flex-flow: column;
     background: #e5e7e6;
     padding: 10px;
-    width: 50%;
-    height: 550px;
+    height: 600px;
     text-align: center;
     right: 0;
-    left: 4rem;
-    margin: auto;
+    left: 1.5rem;
     margin-top: 3rem;
+    width: 100%;
 }
-
+#tasks{
+    display: flex;
+    flex-flow: column;
+    background: gainsboro;
+    font-family: Playfair Display;
+    font-size: 20px;
+    height: 600px;
+    text-align: left;
+    width: 50%;
+}
 #display{
     background: #e0dfd5;
-    height: 150px;
+    height: 100px;
 }
 #task_time{
     left: 2rem;
@@ -39,10 +52,10 @@
     box-sizing: border-box;
     box-shadow: 0 1px 0 0 black;
 }
-#tasks{
-    width: 100%;
-    background: gainsboro;
-    font-family: comic-sans;
-    font-size: 15px;
-    height: 600px;
+
+#tasks ul li{
+  padding: 20px;
+}
+#tasks a{
+  float: right;
 }
