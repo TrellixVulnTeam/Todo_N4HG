@@ -1,6 +1,6 @@
 import os
 from flask import Flask, url_for, redirect, flash, render_template,request
-from flask_sqlalchemy import SQLAlchemy 
+from flask_sqlalchemy import SQLAlchemy
 
 # instantiating flask
 app = Flask(__name__)
@@ -18,7 +18,7 @@ class Todo(db.Model):
 	task_time = db.Column(db.String)
 
 	def __init__(self, task, task_time):
-		self.task = task 
+		self.task = task
 		self.task_time = task_time
 
 	def __repr__(self):
@@ -26,7 +26,7 @@ class Todo(db.Model):
 
 @app.route('/')
 def index():
-	return render_template('index.html')
+	return render_template('index.html', todos=Todo.query.all())
 
 @app.route('/add_item', methods=['GET', 'POST'] )
 def add_item():
@@ -41,9 +41,12 @@ def add_item():
 			return redirect(url_for('index'))
 	return render_template('index.html')
 
-@app.route('/display')
-def display():
-	return render_template('index.html', todos=Todo.query.all())
+@app.route('/delete/<int:id>', methods=['GET','POST'])
+def delete(id):
+	return
+
+
+
 
 
 if __name__ == '__main__':
