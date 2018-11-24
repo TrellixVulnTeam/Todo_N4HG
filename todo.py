@@ -41,9 +41,13 @@ def add_item():
 			return redirect(url_for('index'))
 	return render_template('index.html')
 
-@app.route('/delete/<int:id>', methods=['GET','POST'])
-def delete(id):
-	return
+# @app.route('/delete/<int:id>', methods=['GET','POST'])
+# def delete(id):
+# 	if request.method == 'GET':
+# 		data = Todo.query.filter_by(id=request.form['id'])
+# 		db.session.delete(data)
+# 		db.session.commit()
+# 	return redirect(url_for('index'))
 
 
 
