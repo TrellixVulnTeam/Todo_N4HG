@@ -33,6 +33,7 @@ def add_item():
 	if request.method == 'POST':
 		if not request.form['task'] or not request.form['task_time']:
 			flash("You cant have an empty task")
+			return redirect(url_for('index'))
 		else:
 			task = Todo(request.form['task'], request.form['task_time'])
 			db.session.add(task)

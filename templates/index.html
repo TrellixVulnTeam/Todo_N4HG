@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome/css/all.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css')}}">
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <title>Todo App</title>
 </head>
@@ -21,11 +22,11 @@
               <span class="card-title">TODO LIST</span>
             <div class="card-content" id="display">
                 {% with message = get_flashed_messages()%}
-                  <div class="card-content flashes" id="flashed">
+                  <div class="card-content flashes" >
                     <ul class="">
                       {% if message %}
                       {%for msg in message %}
-                        <li>{{ msg }}</li>
+                        <li id="flashed">{{ msg }}</li>
                       {% endfor %}
                       {% endif %}
                     </ul>
@@ -62,7 +63,7 @@
       <div class="card-content">
         {% for todo in todos %}
         <ul class="collection">
-          <li class="collection-item">
+          <li class="collection-item animated fadeInRight delay-1s">
             {{ todo.task }} at {{ todo.task_time }}
           <a class="btn waves-effect waves-light red darken-3 col s6" href="/delete/{{ todo.id }}"><i class="fa fa-trash" style="color: white;"></i></a>
           <a class="btn waves-effect waves-light blue darken-3 col s6"><i class="fa fa-edit" style="color: white;"></i></a>
@@ -77,6 +78,11 @@
 <script type="text/javascript" src="{{ url_for('static', filename='js/materialize.min.js')}}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
 <script type="text/javascript">
+    $(document).ready(function(){
+      $('#button').on('click', function(){
+        $('#flashed').fadeOut(4000);
+      });
+    });
 </script>
 </body>
 
