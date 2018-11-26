@@ -41,13 +41,21 @@ def add_item():
 			return redirect(url_for('index'))
 	return render_template('index.html')
 
-# @app.route('/delete/<int:id>', methods=['GET','POST'])
-# def delete(id):
-# 	if request.method == 'GET':
-# 		data = Todo.query.filter_by(id=request.form['id'])
-# 		db.session.delete(data)
-# 		db.session.commit()
-# 	return redirect(url_for('index'))
+@app.route('/delete/<int:id>', methods=['GET'])
+def delete(id):
+	if request.method == 'GET':
+		data = Todo.query.filter_by(id=Todo.id).first_or_404()
+		db.session.delete(data)
+		db.session.commit()
+	return redirect(url_for('index'))
+
+# @app.route('/edit/<int:id>', methods['GET', 'POST'])
+# def edit(id):
+# 	if request.method == 'POST':
+# 		if not request.form['task'] or not request.form['task_time']:
+# 			flash("You cant leave a blank task")
+# 		else:
+# 			task = Todo()
 
 
 

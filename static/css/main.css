@@ -66,20 +66,23 @@
     display: grid;
   }
   #task{
-    width: 100%;
-    grid-template-columns: 1fr;
-    margin: auto;
+    display: grid;
+    grid-template-columns: 4fr;
+    margin-left: auto;
     text-align: center;
     font-size: 10px;
     height: 100vh;
     text-align: center;
     overflow: hidden;
+    box-sizing: border-box;
   }
   #tasks ul li{
     padding: 10px;
   }
   #tasks a{
     display: block;
+    width: 100%;
+    box-sizing: border-box;
   }
   .card {
     width: 100%;
