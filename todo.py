@@ -26,7 +26,8 @@ class Todo(db.Model):
 
 @app.route('/')
 def index():
-	return render_template('index.html', todos=Todo.query.all())
+	todos = Todo.query.all()
+	return render_template('index.html', todos)
 
 @app.route('/add_item', methods=['GET', 'POST'] )
 def add_item():
@@ -42,7 +43,7 @@ def add_item():
 			return redirect(url_for('index'))
 	return render_template('index.html')
 
-@app.route('/delete/<int:id>', methods=['GET'])
+@app.route('/delete/<int:id>', methods=['GET', 'POST'])
 def delete(id):
 	if request.method == 'GET':
 		data = Todo.query.filter_by(id=Todo.id).first_or_404()
